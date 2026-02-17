@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domino's Nutrition Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-pizza-slice"></i> Domino's Nutrition Calculator</h1>
+                <p>Calculate nutrition facts for your favorite Domino's menu items</p>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="calculator-grid">
+                <!-- Menu Selection Section -->
+                <section class="menu-section">
+                    <h2><i class="fas fa-utensils"></i> Select Menu Items</h2>
+                    
+                    <div class="menu-categories">
+                        <div class="category">
+                            <h3>Pizzas</h3>
+                            <div class="items-grid" id="pizza-items">
+                                <!-- Pizza items will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="category">
+                            <h3>Sides</h3>
+                            <div class="items-grid" id="sides-items">
+                                <!-- Sides items will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="category">
+                            <h3>Desserts</h3>
+                            <div class="items-grid" id="desserts-items">
+                                <!-- Desserts items will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="category">
+                            <h3>Drinks</h3>
+                            <div class="items-grid" id="drinks-items">
+                                <!-- Drinks items will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Nutrition Summary Section -->
+                <section class="summary-section">
+                    <h2><i class="fas fa-chart-pie"></i> Nutrition Summary</h2>
+                    
+                    <div class="summary-card">
+                        <div class="summary-header">
+                            <h3>Your Order Total</h3>
+                            <button id="reset-btn" class="reset-btn">
+                                <i class="fas fa-redo"></i> Reset
+                            </button>
+                        </div>
+
+                        <div class="nutrition-grid">
+                            <div class="nutrition-item">
+                                <div class="nutrition-icon calories">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="nutrition-info">
+                                    <span class="nutrition-value" id="total-calories">0</span>
+                                    <span class="nutrition-label">Calories</span>
+                                </div>
+                            </div>
+
+                            <div class="nutrition-item">
+                                <div class="nutrition-icon fat">
+                                    <i class="fas fa-cheese"></i>
+                                </div>
+                                <div class="nutrition-info">
+                                    <span class="nutrition-value" id="total-fat">0g</span>
+                                    <span class="nutrition-label">Total Fat</span>
+                                </div>
+                            </div>
+
+                            <div class="nutrition-item">
+                                <div class="nutrition-icon carbs">
+                                    <i class="fas fa-bread-slice"></i>
+                                </div>
+                                <div class="nutrition-info">
+                                    <span class="nutrition-value" id="total-carbs">0g</span>
+                                    <span class="nutrition-label">Carbohydrates</span>
+                                </div>
+                            </div>
+
+                            <div class="nutrition-item">
+                                <div class="nutrition-icon protein">
+                                    <i class="fas fa-drumstick-bite"></i>
+                                </div>
+                                <div class="nutrition-info">
+                                    <span class="nutrition-value" id="total-protein">0g</span>
+                                    <span class="nutrition-label">Protein</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="selected-items">
+                            <h4>Selected Items:</h4>
+                            <div id="selected-items-list" class="selected-items-list">
+                                <p class="no-items">No items selected</p>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="copy-results" class="action-btn">
+                                <i class="fas fa-copy"></i> Copy Results
+                            </button>
+                            <button id="share-results" class="action-btn">
+                                <i class="fas fa-share"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="disclaimer-section">
+                    <h3>Disclaimer</h3>
+                    <p>This calculator is an independent tool and is not affiliated with Domino's Pizza. Nutritional information is estimated and may vary.</p>
+                </div>
+                
+                <div class="data-source">
+                    <h3>Data Source</h3>
+                    <p>Nutritional data sourced from:</p>
+                    <a href="https://dominosnutritioncalculator.us/" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i> https://dominosnutritioncalculator.us/
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Domino's Nutrition Calculator. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
